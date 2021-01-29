@@ -1,0 +1,13 @@
+piVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: hello-kubernetes
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./kustomize/overlays/dev
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: hello-kubernetes
+  validation: client
